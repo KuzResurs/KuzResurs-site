@@ -4,1443 +4,2374 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#081a33" />
-    <meta name="description" content="КузРесурс — комплексные поставки товаров для государственных и корпоративных заказчиков в Москве и Московской области." />
+    <meta
+      name="description"
+      content="КузРесурс — комплексные поставки товаров для государственных и корпоративных заказчиков в Москве и Московской области."
+    />
     <title>КУЗРЕСУРС — комплексные поставки по 44‑ФЗ и 223‑ФЗ</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23081a33%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M14%2014h9v14l15-14h12L31%2031l20%2019H38L23%2035v15h-9z%22%20fill%3D%22%23f4f1e9%22%2F%3E%0A%20%20%3Crect%20x%3D%2251%22%20y%3D%228%22%20width%3D%227%22%20height%3D%227%22%20fill%3D%22%23195bff%22%2F%3E%0A%3C%2Fsvg%3E%0A" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23081a33%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M14%2014h9v14l15-14h12L31%2031l20%2019H38L23%2035v15h-9z%22%20fill%3D%22%23f4f1e9%22%2F%3E%0A%20%20%3Crect%20x%3D%2251%22%20y%3D%228%22%20width%3D%227%22%20height%3D%227%22%20fill%3D%22%23195bff%22%2F%3E%0A%3C%2Fsvg%3E%0A"
+    />
     <style>
-
-:root {
-  --paper: #f4f1e9;
-  --paper-2: #ece9e1;
-  --ink: #081a33;
-  --muted: #667386;
-  --graphite: #202630;
-  --blue: #195bff;
-  --blue-dark: #0f45d8;
-  --line: #c9d0d8;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  background: var(--paper);
-}
-
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Manrope, Inter, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-.site-header {
-  position: relative;
-  z-index: 20;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  min-height: 88px;
-  padding: 0 5vw;
-  border-bottom: 1px solid var(--line);
-  background: rgba(244, 241, 233, 0.96);
-}
-
-.brand {
-  display: inline-flex;
-  align-items: flex-start;
-  width: fit-content;
-  font-size: clamp(1.55rem, 2.2vw, 2.25rem);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-}
-
-.brand-mark {
-  width: 7px;
-  height: 7px;
-  margin: 4px 0 0 7px;
-  background: var(--blue);
-}
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: clamp(24px, 3vw, 48px);
-  font-size: 0.96rem;
-  font-weight: 550;
-}
-
-.main-nav a {
-  position: relative;
-  padding: 34px 0 32px;
-}
-
-.main-nav a::after {
-  position: absolute;
-  right: 0;
-  bottom: 25px;
-  left: 0;
-  height: 2px;
-  content: "";
-  background: var(--blue);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 180ms ease-out;
-}
-
-.main-nav a:hover::after,
-.main-nav a:focus-visible::after {
-  transform: scaleX(1);
-}
-
-.header-location {
-  display: flex;
-  align-items: center;
-  justify-self: end;
-  gap: 12px;
-  padding-left: 3vw;
-  border-left: 1px solid var(--line);
-  color: #314056;
-  font-size: 0.92rem;
-}
-
-.pin {
-  position: relative;
-  display: inline-block;
-  width: 16px;
-  height: 20px;
-  border: 1.7px solid currentColor;
-  border-radius: 12px 12px 14px 14px;
-  transform: rotate(45deg) scale(0.82);
-}
-
-.pin::after {
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 4px;
-  height: 4px;
-  content: "";
-  border: 1px solid currentColor;
-  border-radius: 50%;
-}
-
-.hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 58%) minmax(0, 42%);
-  min-height: min(770px, calc(100vh - 88px));
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
-}
-
-.hero-copy {
-  position: relative;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(72px, 8vh, 110px) 3vw clamp(70px, 8vh, 100px) 5vw;
-}
-
-.region-tag {
-  position: relative;
-  display: none;
-  align-items: center;
-  width: fit-content;
-  gap: 12px;
-  margin-bottom: 38px;
-  padding: 13px 19px;
-  border: 1px solid var(--blue);
-  color: var(--blue);
-  font-size: 0.91rem;
-  font-weight: 600;
-}
-
-.hero h1 {
-  max-width: 900px;
-  margin: 0;
-  font-size: clamp(3.55rem, 5.25vw, 6rem);
-  font-weight: 800;
-  letter-spacing: -0.055em;
-  line-height: 0.94;
-}
-
-.title-dot {
-  display: inline-block;
-  width: 0.22em;
-  height: 0.22em;
-  margin: 0 0 0.05em 0.24em;
-  background: var(--blue);
-}
-
-.hero-lead {
-  max-width: 650px;
-  margin: 30px 0 0;
-  color: #314056;
-  font-size: clamp(1rem, 1.3vw, 1.3rem);
-  line-height: 1.5;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 20px;
-  margin-top: 42px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 64px;
-  padding: 0 30px;
-  border: 1px solid var(--ink);
-  font-size: 0.98rem;
-  font-weight: 650;
-  transition: color 180ms ease-out, background 180ms ease-out,
-    border-color 180ms ease-out, transform 180ms ease-out;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.button:focus-visible,
-.main-nav a:focus-visible,
-.brand:focus-visible {
-  outline: 2px solid var(--blue);
-  outline-offset: 4px;
-}
-
-.button-primary {
-  gap: 32px;
-  border-color: var(--blue);
-  background: var(--blue);
-  color: white;
-}
-
-.button-primary:hover {
-  border-color: var(--blue-dark);
-  background: var(--blue-dark);
-}
-
-.button-secondary:hover {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.hero-visual {
-  position: relative;
-  min-height: 100%;
-  overflow: hidden;
-  border-left: 1px solid rgba(25, 91, 255, 0.35);
-  background-color: #d4d3d0;
-  background-image: linear-gradient(90deg, rgba(244, 241, 233, 0.08), transparent 35%),
-    url("kuzresurs-hero-architecture.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-.hero-visual::after {
-  position: absolute;
-  inset: 0;
-  content: "";
-  background: linear-gradient(90deg, rgba(244, 241, 233, 0.4), transparent 28%),
-    linear-gradient(180deg, rgba(244, 241, 233, 0.1), transparent 28%);
-  pointer-events: none;
-}
-
-.coordinate-grid {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  opacity: 0.45;
-  background-image: linear-gradient(rgba(25, 91, 255, 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(25, 91, 255, 0.3) 1px, transparent 1px);
-  background-size: 84px 84px;
-  mask-image: linear-gradient(135deg, #000, transparent 72%);
-}
-
-.measure {
-  position: absolute;
-  z-index: 3;
-  width: 1px;
-  background: rgba(25, 91, 255, 0.72);
-}
-
-.measure::before,
-.measure::after {
-  position: absolute;
-  left: -5px;
-  width: 11px;
-  height: 1px;
-  content: "";
-  background: inherit;
-}
-
-.measure::before {
-  top: 0;
-}
-
-.measure::after {
-  bottom: 0;
-}
-
-.measure-one {
-  top: 12%;
-  left: 18%;
-  height: 60%;
-}
-
-.measure-two {
-  top: 28%;
-  right: 14%;
-  height: 45%;
-}
-
-.visual-caption {
-  position: absolute;
-  z-index: 4;
-  right: 28px;
-  bottom: 24px;
-  color: rgba(244, 241, 233, 0.72);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  writing-mode: vertical-rl;
-}
-
-.principles {
-  position: relative;
-  z-index: 10;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  min-height: 124px;
-  padding: 0 5vw;
-  border-bottom: 1px solid var(--line);
-  background: var(--paper);
-}
-
-.principles article {
-  display: grid;
-  grid-template-columns: 58px 1fr;
-  align-items: center;
-  gap: 24px;
-  padding: 25px 4vw;
-  border-right: 1px solid var(--line);
-}
-
-.principles article:first-child {
-  padding-left: 0;
-}
-
-.principles article:last-child {
-  border-right: 0;
-}
-
-.principles span:not(.line-icon) {
-  color: var(--blue);
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
-.principles h2 {
-  margin: 4px 0 0;
-  font-size: 1rem;
-  font-weight: 650;
-}
-
-.line-icon {
-  position: relative;
-  display: inline-block;
-  width: 46px;
-  height: 46px;
-  color: var(--blue);
-}
-
-.blueprint {
-  border: 1.5px solid currentColor;
-  background-image: linear-gradient(currentColor 1px, transparent 1px),
-    linear-gradient(90deg, currentColor 1px, transparent 1px);
-  background-size: 15px 15px;
-}
-
-.blueprint::after,
-.document::after {
-  position: absolute;
-  right: -7px;
-  bottom: -7px;
-  width: 14px;
-  height: 14px;
-  content: "";
-  border-bottom: 1.5px solid currentColor;
-  border-right: 1.5px solid currentColor;
-}
-
-.document {
-  width: 36px;
-  border: 1.5px solid currentColor;
-}
-
-.document::before {
-  position: absolute;
-  top: 11px;
-  right: 7px;
-  left: 7px;
-  height: 1px;
-  content: "";
-  background: currentColor;
-  box-shadow: 0 8px 0 currentColor, 0 16px 0 currentColor;
-}
-
-.package {
-  width: 42px;
-  height: 42px;
-  margin-left: 2px;
-  border: 1.5px solid currentColor;
-  transform: rotate(30deg) skewY(-30deg) scaleY(0.86);
-}
-
-.package::after {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  content: "";
-  background: currentColor;
-}
-
-.directions-intro {
-  display: grid;
-  grid-template-columns: 0.6fr 1.5fr 1fr;
-  gap: 6vw;
-  padding: 120px 5vw;
-}
-
-.eyebrow {
-  margin: 0;
-  color: var(--blue) !important;
-  font-size: 0.73rem !important;
-  font-weight: 750;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.directions-intro h2 {
-  max-width: 650px;
-  margin: 0;
-  font-size: clamp(2.2rem, 3.6vw, 4.2rem);
-  font-weight: 750;
-  letter-spacing: -0.045em;
-  line-height: 1.02;
-}
-
-.directions-intro > p:last-child {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.direction-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 0 5vw 120px;
-}
-
-.direction-card {
-  position: relative;
-  min-height: 430px;
-  padding: 30px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-right: 0;
-  background: rgba(255, 255, 255, 0.14);
-  transition: background 220ms ease-out, transform 220ms ease-out;
-}
-
-.direction-card:last-child {
-  border-right: 1px solid var(--line);
-}
-
-.direction-card:hover {
-  z-index: 2;
-  background: #faf8f2;
-  transform: translateY(-5px);
-}
-
-.direction-card-featured {
-  background: #e7ebf3;
-}
-
-.direction-card-dark,
-.direction-card-dark:hover {
-  border-color: var(--graphite);
-  background: var(--graphite);
-  color: var(--paper);
-}
-
-.card-number {
-  color: var(--blue);
-  font-size: 0.68rem;
-  font-weight: 750;
-  letter-spacing: 0.16em;
-}
-
-.direction-card h3 {
-  position: absolute;
-  right: 30px;
-  bottom: 112px;
-  left: 30px;
-  margin: 0;
-  font-size: clamp(1.4rem, 1.8vw, 2rem);
-  font-weight: 720;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-}
-
-.direction-card p {
-  position: absolute;
-  right: 30px;
-  bottom: 27px;
-  left: 30px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.55;
-}
-
-.direction-card-dark p {
-  color: #aeb8c5;
-}
-
-.direction-symbol {
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  width: 112px;
-  height: 112px;
-  color: var(--blue);
-  transform: translateX(-50%);
-}
-
-.equipment-symbol {
-  border: 1.5px solid currentColor;
-  background-image: linear-gradient(90deg, transparent 49%, currentColor 50%, transparent 51%),
-    linear-gradient(transparent 49%, currentColor 50%, transparent 51%);
-  transform: translateX(-50%) rotate(45deg) scale(0.73);
-}
-
-.equipment-symbol::after {
-  position: absolute;
-  inset: 22px;
-  content: "";
-  border: 1.5px solid currentColor;
-}
-
-.furniture-symbol {
-  width: 120px;
-  height: 90px;
-  border: 1.5px solid currentColor;
-  border-top-width: 20px;
-}
-
-.furniture-symbol::before,
-.furniture-symbol::after {
-  position: absolute;
-  bottom: -28px;
-  width: 1.5px;
-  height: 28px;
-  content: "";
-  background: currentColor;
-}
-
-.furniture-symbol::before { left: 12px; }
-.furniture-symbol::after { right: 12px; }
-
-.institution-symbol {
-  width: 128px;
-  height: 100px;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  border-left: 1.5px solid currentColor;
-  background-image: repeating-linear-gradient(90deg, transparent 0 19px, currentColor 20px 21px);
-}
-
-.institution-symbol::before {
-  position: absolute;
-  top: -22px;
-  left: -10px;
-  width: 146px;
-  height: 22px;
-  content: "";
-  background: currentColor;
-  clip-path: polygon(50% 0, 100% 100%, 0 100%);
-}
-
-.custom-symbol {
-  border: 1.5px solid currentColor;
-  transform: translateX(-50%) rotate(30deg) skewY(-30deg) scaleY(0.86);
-}
-
-.custom-symbol::before,
-.custom-symbol::after {
-  position: absolute;
-  content: "";
-  background: currentColor;
-}
-
-.custom-symbol::before { top: 50%; left: 0; width: 100%; height: 1px; }
-.custom-symbol::after { top: 0; left: 50%; width: 1px; height: 100%; }
-
-.about {
-  display: grid;
-  grid-template-columns: 42% 58%;
-  min-height: 800px;
-  overflow: hidden;
-  background: var(--graphite);
-  color: var(--paper);
-}
-
-.about-index {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-right: 1px solid rgba(255, 255, 255, 0.14);
-  color: rgba(244, 241, 233, 0.055);
-  font-size: clamp(10rem, 22vw, 24rem);
-  font-weight: 800;
-  letter-spacing: -0.12em;
-  line-height: 0.55;
-}
-
-.about-index::before {
-  position: absolute;
-  inset: 0;
-  content: "";
-  opacity: 0.5;
-  background-image: linear-gradient(rgba(25, 91, 255, 0.28) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(25, 91, 255, 0.28) 1px, transparent 1px);
-  background-size: 70px 70px;
-  mask-image: linear-gradient(135deg, #000, transparent 78%);
-}
-
-.about-index span {
-  position: relative;
-  z-index: 2;
-  color: var(--blue);
-  font-size: 0.23em;
-  letter-spacing: 0;
-}
-
-.about-copy {
-  padding: 110px 6vw;
-}
-
-.eyebrow-light {
-  color: #7aa0ff !important;
-}
-
-.about h2 {
-  max-width: 810px;
-  margin: 25px 0 30px;
-  font-size: clamp(2.6rem, 4.1vw, 5rem);
-  font-weight: 740;
-  letter-spacing: -0.055em;
-  line-height: 0.99;
-}
-
-.about-lead {
-  max-width: 720px;
-  margin: 0;
-  color: #b6c0cc;
-  font-size: 1.08rem;
-  line-height: 1.7;
-}
-
-.about-points {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  margin-top: 62px;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.about-points div {
-  min-height: 150px;
-  padding: 24px 28px 24px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.about-points div:nth-child(odd) {
-  border-right: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.about-points div:nth-child(even) {
-  padding-left: 28px;
-}
-
-.about-points span,
-.check-list span {
-  color: var(--blue);
-  font-size: 0.68rem;
-  font-weight: 750;
-  letter-spacing: 0.14em;
-}
-
-.about-points p {
-  max-width: 300px;
-  margin: 18px 0 0;
-  font-size: 0.96rem;
-  line-height: 1.55;
-}
-
-.experience {
-  padding: 120px 5vw;
-}
-
-.section-heading {
-  display: grid;
-  grid-template-columns: 0.7fr 2fr;
-  gap: 5vw;
-  align-items: start;
-}
-
-.section-heading h2 {
-  max-width: 900px;
-  margin: 0;
-  font-size: clamp(2.7rem, 4.4vw, 5.1rem);
-  font-weight: 750;
-  letter-spacing: -0.055em;
-  line-height: 0.98;
-}
-
-.experience-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 70px 0 36px calc(27% + 2.2vw);
-}
-
-.experience-list span {
-  padding: 15px 18px;
-  border: 1px solid var(--line);
-  color: #334158;
-  font-size: 0.93rem;
-}
-
-.experience-note {
-  max-width: 750px;
-  margin: 0 0 0 calc(27% + 2.2vw);
-  color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.7;
-}
-
-.audiences {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.audience-card {
-  min-height: 680px;
-  padding: 80px 5vw;
-}
-
-.audience-buyers {
-  background: #e8edf5;
-}
-
-.audience-suppliers {
-  background: var(--ink);
-  color: var(--paper);
-}
-
-.audience-card h2 {
-  max-width: 640px;
-  margin: 28px 0 48px;
-  font-size: clamp(2.5rem, 3.7vw, 4.5rem);
-  font-weight: 740;
-  letter-spacing: -0.05em;
-  line-height: 1;
-}
-
-.audience-card ul {
-  max-width: 660px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid rgba(8, 26, 51, 0.2);
-}
-
-.audience-suppliers ul {
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.audience-card li {
-  position: relative;
-  padding: 20px 0 20px 30px;
-  border-bottom: 1px solid rgba(8, 26, 51, 0.2);
-  line-height: 1.5;
-}
-
-.audience-suppliers li {
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.audience-card li::before {
-  position: absolute;
-  top: 27px;
-  left: 2px;
-  width: 8px;
-  height: 8px;
-  content: "";
-  background: var(--blue);
-}
-
-.audience-card > a {
-  display: flex;
-  justify-content: space-between;
-  max-width: 660px;
-  margin-top: 50px;
-  padding: 22px 0;
-  border-bottom: 2px solid currentColor;
-  font-weight: 700;
-}
-
-.process {
-  padding: 120px 5vw;
-}
-
-.process-heading {
-  margin-bottom: 72px;
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-}
-
-.process-grid article {
-  min-height: 310px;
-  padding: 28px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.process-grid span {
-  color: var(--blue);
-  font-size: 0.72rem;
-  font-weight: 750;
-  letter-spacing: 0.14em;
-}
-
-.process-grid h3 {
-  margin: 100px 0 14px;
-  font-size: 1.45rem;
-  letter-spacing: -0.03em;
-}
-
-.process-grid p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-}
-
-.control-section {
-  display: grid;
-  grid-template-columns: 43% 57%;
-  min-height: 760px;
-  background: #e8ebed;
-}
-
-.control-graphic {
-  position: relative;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border-right: 1px solid var(--line);
-  background-image: linear-gradient(rgba(25, 91, 255, 0.18) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(25, 91, 255, 0.18) 1px, transparent 1px);
-  background-size: 62px 62px;
-}
-
-.control-graphic > span {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: 230px;
-  height: 300px;
-  border: 2px solid var(--ink);
-  background: var(--paper);
-  color: var(--ink);
-  font-size: 6rem;
-  font-weight: 800;
-  letter-spacing: -0.08em;
-  box-shadow: 22px 22px 0 var(--blue);
-}
-
-.cross {
-  position: absolute;
-  width: 26px;
-  height: 26px;
-}
-
-.cross::before,
-.cross::after {
-  position: absolute;
-  content: "";
-  background: var(--blue);
-}
-
-.cross::before { top: 12px; left: 0; width: 26px; height: 1px; }
-.cross::after { top: 0; left: 12px; width: 1px; height: 26px; }
-.cross-one { top: 18%; left: 16%; }
-.cross-two { right: 13%; bottom: 20%; }
-
-.control-copy {
-  padding: 105px 7vw;
-}
-
-.control-copy h2 {
-  max-width: 790px;
-  margin: 25px 0 56px;
-  font-size: clamp(2.7rem, 4vw, 4.8rem);
-  font-weight: 750;
-  letter-spacing: -0.055em;
-  line-height: 1;
-}
-
-.check-list {
-  border-top: 1px solid #b9c1ca;
-}
-
-.check-list div {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  align-items: center;
-  min-height: 66px;
-  border-bottom: 1px solid #b9c1ca;
-}
-
-.check-list p {
-  margin: 0;
-  font-size: 0.96rem;
-}
-
-.faq {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 8vw;
-  padding: 120px 5vw;
-}
-
-.faq-heading {
-  display: block;
-}
-
-.faq-heading h2 {
-  margin-top: 24px;
-  font-size: clamp(2.7rem, 4vw, 4.7rem);
-}
-
-.faq-list {
-  border-top: 1px solid var(--line);
-}
-
-.faq-list details {
-  border-bottom: 1px solid var(--line);
-}
-
-.faq-list summary {
-  position: relative;
-  padding: 27px 52px 27px 0;
-  cursor: pointer;
-  font-size: 1.08rem;
-  font-weight: 680;
-  line-height: 1.4;
-  list-style: none;
-}
-
-.faq-list summary::-webkit-details-marker { display: none; }
-
-.faq-list summary::after {
-  position: absolute;
-  top: 24px;
-  right: 0;
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  content: "+";
-  border: 1px solid var(--ink);
-  color: var(--blue);
-  font-weight: 500;
-}
-
-.faq-list details[open] summary::after { content: "−"; }
-
-.faq-list details p {
-  max-width: 680px;
-  margin: -4px 0 28px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-
-.contact {
-  display: grid;
-  grid-template-columns: 58% 42%;
-  min-height: 610px;
-  background: var(--blue);
-  color: white;
-}
-
-.contact-copy {
-  padding: 95px 7vw 95px 5vw;
-}
-
-.contact-copy .eyebrow-light {
-  color: #cbd8ff !important;
-}
-
-.contact-copy h2 {
-  max-width: 870px;
-  margin: 28px 0 36px;
-  font-size: clamp(3rem, 5vw, 6rem);
-  font-weight: 760;
-  letter-spacing: -0.06em;
-  line-height: 0.95;
-}
-
-.contact-copy > p:last-child {
-  max-width: 650px;
-  color: #dce5ff;
-  font-size: 1.04rem;
-  line-height: 1.65;
-}
-
-.contact-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 95px 5vw;
-  border-left: 1px solid rgba(255, 255, 255, 0.35);
-  background: #104be0;
-}
-
-.contact-panel-label {
-  margin: 0;
-  color: #cbd8ff;
-  font-size: 0.72rem;
-  font-weight: 750;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.contact-pending {
-  margin: auto 0;
-  padding: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.38);
-}
-
-.contact-pending span {
-  color: #cbd8ff;
-  font-size: 0.7rem;
-  font-weight: 750;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.contact-pending p {
-  margin: 17px 0 0;
-  font-size: 1.18rem;
-  line-height: 1.55;
-}
-
-.contact-links a {
-  display: flex;
-  justify-content: space-between;
-  padding: 18px 0;
-  border-bottom: 2px solid white;
-  font-weight: 700;
-}
-
-footer {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr 1fr;
-  align-items: end;
-  gap: 5vw;
-  padding: 70px 5vw;
-  background: var(--ink);
-  color: #c1cbd8;
-}
-
-.brand-footer {
-  color: white;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.86rem;
-  line-height: 1.55;
-}
-
-footer p:last-child {
-  text-align: right;
-}
-
-@media (max-width: 1100px) {
-  .site-header {
-    grid-template-columns: 1fr auto;
-  }
-
-  .main-nav {
-    display: none;
-  }
-
-  .hero {
-    grid-template-columns: 64% 36%;
-  }
-
-  .hero h1 {
-    font-size: clamp(3.2rem, 6.5vw, 4.8rem);
-  }
-
-  .principles article {
-    padding-right: 2vw;
-    padding-left: 2vw;
-  }
-
-  .direction-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .direction-card:nth-child(2) {
-    border-right: 1px solid var(--line);
-  }
-
-  .about {
-    grid-template-columns: 34% 66%;
-  }
-
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .audience-card {
-    padding-right: 4vw;
-    padding-left: 4vw;
-  }
-}
-
-@media (max-width: 760px) {
-  .site-header {
-    min-height: 72px;
-    padding: 0 22px;
-  }
-
-  .header-location {
-    display: none;
-  }
-
-  .brand {
-    font-size: 1.55rem;
-  }
-
-  .hero {
-    display: block;
-    min-height: auto;
-  }
-
-  .hero-copy {
-    min-height: 690px;
-    padding: 58px 22px 240px;
-  }
-
-  .region-tag {
-    display: flex;
-  }
-
-  .hero h1 {
-    font-size: clamp(3.05rem, 13vw, 4.4rem);
-  }
-
-  .hero h1 br:nth-of-type(1) {
-    display: none;
-  }
-
-  .hero-lead {
-    margin-top: 26px;
-    font-size: 1.02rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    margin-top: 34px;
-  }
-
-  .button {
-    width: 100%;
-    min-height: 58px;
-  }
-
-  .hero-visual {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 220px;
-    min-height: 0;
-    border-top: 1px solid var(--blue);
-    border-left: 0;
-    background-position: center 48%;
-  }
-
-  .principles {
-    display: block;
-    padding: 0 22px;
-  }
-
-  .principles article,
-  .principles article:first-child {
-    padding: 23px 0;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .principles article:last-child {
-    border-bottom: 0;
-  }
-
-  .directions-intro {
-    display: block;
-    padding: 80px 22px;
-  }
-
-  .directions-intro h2 {
-    margin-top: 22px;
-  }
-
-  .directions-intro > p:last-child {
-    margin-top: 24px;
-  }
-
-  .direction-grid {
-    display: block;
-    padding: 0 22px 80px;
-  }
-
-  .direction-card,
-  .direction-card:nth-child(2),
-  .direction-card:last-child {
-    min-height: 370px;
-    border-right: 1px solid var(--line);
-    border-bottom: 0;
-  }
-
-  .direction-card:last-child {
-    border-bottom: 1px solid var(--graphite);
-  }
-
-  .direction-symbol {
-    top: 80px;
-  }
-
-  .about {
-    display: block;
-    min-height: 0;
-  }
-
-  .about-index {
-    min-height: 320px;
-    border-right: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-    font-size: 11rem;
-  }
-
-  .about-copy {
-    padding: 76px 22px;
-  }
-
-  .about-points {
-    display: block;
-    margin-top: 44px;
-  }
-
-  .about-points div,
-  .about-points div:nth-child(even) {
-    min-height: 0;
-    padding: 22px 0;
-    border-right: 0;
-  }
-
-  .experience,
-  .process {
-    padding: 80px 22px;
-  }
-
-  .section-heading {
-    display: block;
-  }
-
-  .section-heading h2 {
-    margin-top: 22px;
-  }
-
-  .experience-list,
-  .experience-note {
-    margin-left: 0;
-  }
-
-  .experience-list {
-    margin-top: 44px;
-  }
-
-  .audiences {
-    display: block;
-  }
-
-  .audience-card {
-    min-height: 0;
-    padding: 76px 22px;
-  }
-
-  .process-heading {
-    margin-bottom: 44px;
-  }
-
-  .process-grid {
-    display: block;
-  }
-
-  .process-grid article {
-    min-height: 235px;
-  }
-
-  .process-grid h3 {
-    margin-top: 70px;
-  }
-
-  .control-section {
-    display: block;
-    min-height: 0;
-  }
-
-  .control-graphic {
-    min-height: 430px;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-
-  .control-graphic > span {
-    width: 170px;
-    height: 220px;
-    font-size: 4.5rem;
-  }
-
-  .control-copy {
-    padding: 76px 22px;
-  }
-
-  .faq {
-    display: block;
-    padding: 80px 22px;
-  }
-
-  .faq-list {
-    margin-top: 46px;
-  }
-
-  .contact {
-    display: block;
-    min-height: 0;
-  }
-
-  .contact-copy,
-  .contact-panel {
-    padding: 76px 22px;
-  }
-
-  .contact-panel {
-    min-height: 430px;
-    border-top: 1px solid rgba(255, 255, 255, 0.35);
-    border-left: 0;
-  }
-
-  footer {
-    display: block;
-    padding: 58px 22px;
-  }
-
-  footer p {
-    margin-top: 25px;
-  }
-
-  footer p:last-child {
-    text-align: left;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero-copy > * {
-    animation: reveal 620ms both;
-  }
-
-  .hero-copy > *:nth-child(2) {
-    animation-delay: 80ms;
-  }
-
-  .hero-copy > *:nth-child(3) {
-    animation-delay: 150ms;
-  }
-
-  .hero-copy > *:nth-child(4) {
-    animation-delay: 220ms;
-  }
-
-  .coordinate-grid {
-    animation: grid-in 900ms 180ms both;
-  }
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-}
-
-@keyframes grid-in {
-  from {
-    opacity: 0;
-  }
-}
-</style>
+      :root {
+        --paper: #f4f1e9;
+        --paper-2: #ece9e1;
+        --ink: #081a33;
+        --muted: #667386;
+        --graphite: #202630;
+        --blue: #195bff;
+        --blue-dark: #0f45d8;
+        --line: #c9d0d8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--paper);
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Manrope, Inter, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      .site-header {
+        position: relative;
+        z-index: 20;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        min-height: 88px;
+        padding: 0 5vw;
+        border-bottom: 1px solid var(--line);
+        background: rgba(244, 241, 233, 0.96);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: flex-start;
+        width: fit-content;
+        font-size: clamp(1.55rem, 2.2vw, 2.25rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+
+      .brand-mark {
+        width: 7px;
+        height: 7px;
+        margin: 4px 0 0 7px;
+        background: var(--blue);
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(24px, 3vw, 48px);
+        font-size: 0.96rem;
+        font-weight: 550;
+      }
+
+      .main-nav a {
+        position: relative;
+        padding: 34px 0 32px;
+      }
+
+      .main-nav a::after {
+        position: absolute;
+        right: 0;
+        bottom: 25px;
+        left: 0;
+        height: 2px;
+        content: "";
+        background: var(--blue);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 180ms ease-out;
+      }
+
+      .main-nav a:hover::after,
+      .main-nav a:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      .header-location {
+        display: flex;
+        align-items: center;
+        justify-self: end;
+        gap: 12px;
+        padding-left: 3vw;
+        border-left: 1px solid var(--line);
+        color: #314056;
+        font-size: 0.92rem;
+      }
+
+      .pin {
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 20px;
+        border: 1.7px solid currentColor;
+        border-radius: 12px 12px 14px 14px;
+        transform: rotate(45deg) scale(0.82);
+      }
+
+      .pin::after {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 4px;
+        height: 4px;
+        content: "";
+        border: 1px solid currentColor;
+        border-radius: 50%;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 58%) minmax(0, 42%);
+        min-height: min(770px, calc(100vh - 88px));
+        overflow: hidden;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(72px, 8vh, 110px) 3vw clamp(70px, 8vh, 100px) 5vw;
+      }
+
+      .region-tag {
+        position: relative;
+        display: none;
+        align-items: center;
+        width: fit-content;
+        gap: 12px;
+        margin-bottom: 38px;
+        padding: 13px 19px;
+        border: 1px solid var(--blue);
+        color: var(--blue);
+        font-size: 0.91rem;
+        font-weight: 600;
+      }
+
+      .hero h1 {
+        max-width: 900px;
+        margin: 0;
+        font-size: clamp(3.55rem, 5.25vw, 6rem);
+        font-weight: 800;
+        letter-spacing: -0.055em;
+        line-height: 0.94;
+      }
+
+      .title-dot {
+        display: inline-block;
+        width: 0.22em;
+        height: 0.22em;
+        margin: 0 0 0.05em 0.24em;
+        background: var(--blue);
+      }
+
+      .hero-lead {
+        max-width: 650px;
+        margin: 30px 0 0;
+        color: #314056;
+        font-size: clamp(1rem, 1.3vw, 1.3rem);
+        line-height: 1.5;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 20px;
+        margin-top: 42px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 64px;
+        padding: 0 30px;
+        border: 1px solid var(--ink);
+        font-size: 0.98rem;
+        font-weight: 650;
+        transition:
+          color 180ms ease-out,
+          background 180ms ease-out,
+          border-color 180ms ease-out,
+          transform 180ms ease-out;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button:focus-visible,
+      .main-nav a:focus-visible,
+      .brand:focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 4px;
+      }
+
+      .button-primary {
+        gap: 32px;
+        border-color: var(--blue);
+        background: var(--blue);
+        color: white;
+      }
+
+      .button-primary:hover {
+        border-color: var(--blue-dark);
+        background: var(--blue-dark);
+      }
+
+      .button-secondary:hover {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 100%;
+        overflow: hidden;
+        border-left: 1px solid rgba(25, 91, 255, 0.35);
+        background-color: #d4d3d0;
+        background-image:
+          linear-gradient(90deg, rgba(244, 241, 233, 0.08), transparent 35%),
+          url("kuzresurs-hero-architecture.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .hero-visual::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(244, 241, 233, 0.4), transparent 28%),
+          linear-gradient(180deg, rgba(244, 241, 233, 0.1), transparent 28%);
+        pointer-events: none;
+      }
+
+      .coordinate-grid {
+        position: absolute;
+        z-index: 2;
+        inset: 0;
+        opacity: 0.45;
+        background-image:
+          linear-gradient(rgba(25, 91, 255, 0.3) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(25, 91, 255, 0.3) 1px, transparent 1px);
+        background-size: 84px 84px;
+        mask-image: linear-gradient(135deg, #000, transparent 72%);
+      }
+
+      .measure {
+        position: absolute;
+        z-index: 3;
+        width: 1px;
+        background: rgba(25, 91, 255, 0.72);
+      }
+
+      .measure::before,
+      .measure::after {
+        position: absolute;
+        left: -5px;
+        width: 11px;
+        height: 1px;
+        content: "";
+        background: inherit;
+      }
+
+      .measure::before {
+        top: 0;
+      }
+
+      .measure::after {
+        bottom: 0;
+      }
+
+      .measure-one {
+        top: 12%;
+        left: 18%;
+        height: 60%;
+      }
+
+      .measure-two {
+        top: 28%;
+        right: 14%;
+        height: 45%;
+      }
+
+      .visual-caption {
+        position: absolute;
+        z-index: 4;
+        right: 28px;
+        bottom: 24px;
+        color: rgba(244, 241, 233, 0.72);
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        writing-mode: vertical-rl;
+      }
+
+      .principles {
+        position: relative;
+        z-index: 10;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        min-height: 124px;
+        padding: 0 5vw;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+      }
+
+      .principles article {
+        display: grid;
+        grid-template-columns: 58px 1fr;
+        align-items: center;
+        gap: 24px;
+        padding: 25px 4vw;
+        border-right: 1px solid var(--line);
+      }
+
+      .principles article:first-child {
+        padding-left: 0;
+      }
+
+      .principles article:last-child {
+        border-right: 0;
+      }
+
+      .principles span:not(.line-icon) {
+        color: var(--blue);
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+      }
+
+      .principles h2 {
+        margin: 4px 0 0;
+        font-size: 1rem;
+        font-weight: 650;
+      }
+
+      .line-icon {
+        position: relative;
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        color: var(--blue);
+      }
+
+      .blueprint {
+        border: 1.5px solid currentColor;
+        background-image:
+          linear-gradient(currentColor 1px, transparent 1px),
+          linear-gradient(90deg, currentColor 1px, transparent 1px);
+        background-size: 15px 15px;
+      }
+
+      .blueprint::after,
+      .document::after {
+        position: absolute;
+        right: -7px;
+        bottom: -7px;
+        width: 14px;
+        height: 14px;
+        content: "";
+        border-bottom: 1.5px solid currentColor;
+        border-right: 1.5px solid currentColor;
+      }
+
+      .document {
+        width: 36px;
+        border: 1.5px solid currentColor;
+      }
+
+      .document::before {
+        position: absolute;
+        top: 11px;
+        right: 7px;
+        left: 7px;
+        height: 1px;
+        content: "";
+        background: currentColor;
+        box-shadow:
+          0 8px 0 currentColor,
+          0 16px 0 currentColor;
+      }
+
+      .package {
+        width: 42px;
+        height: 42px;
+        margin-left: 2px;
+        border: 1.5px solid currentColor;
+        transform: rotate(30deg) skewY(-30deg) scaleY(0.86);
+      }
+
+      .package::after {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        content: "";
+        background: currentColor;
+      }
+
+      .directions-intro {
+        display: grid;
+        grid-template-columns: 0.6fr 1.5fr 1fr;
+        gap: 6vw;
+        padding: 120px 5vw;
+      }
+
+      .eyebrow {
+        margin: 0;
+        color: var(--blue) !important;
+        font-size: 0.73rem !important;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .directions-intro h2 {
+        max-width: 650px;
+        margin: 0;
+        font-size: clamp(2.2rem, 3.6vw, 4.2rem);
+        font-weight: 750;
+        letter-spacing: -0.045em;
+        line-height: 1.02;
+      }
+
+      .directions-intro > p:last-child {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      .direction-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 0 5vw 120px;
+      }
+
+      .direction-card {
+        position: relative;
+        min-height: 430px;
+        padding: 30px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-right: 0;
+        background: rgba(255, 255, 255, 0.14);
+        transition:
+          background 220ms ease-out,
+          transform 220ms ease-out;
+      }
+
+      .direction-card:last-child {
+        border-right: 1px solid var(--line);
+      }
+
+      .direction-card:hover {
+        z-index: 2;
+        background: #faf8f2;
+        transform: translateY(-5px);
+      }
+
+      .direction-card-featured {
+        background: #e7ebf3;
+      }
+
+      .direction-card-dark,
+      .direction-card-dark:hover {
+        border-color: var(--graphite);
+        background: var(--graphite);
+        color: var(--paper);
+      }
+
+      .card-number {
+        color: var(--blue);
+        font-size: 0.68rem;
+        font-weight: 750;
+        letter-spacing: 0.16em;
+      }
+
+      .direction-card h3 {
+        position: absolute;
+        right: 30px;
+        bottom: 112px;
+        left: 30px;
+        margin: 0;
+        font-size: clamp(1.4rem, 1.8vw, 2rem);
+        font-weight: 720;
+        letter-spacing: -0.035em;
+        line-height: 1.05;
+      }
+
+      .direction-card p {
+        position: absolute;
+        right: 30px;
+        bottom: 27px;
+        left: 30px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      .direction-card-dark p {
+        color: #aeb8c5;
+      }
+
+      .direction-symbol {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        width: 112px;
+        height: 112px;
+        color: var(--blue);
+        transform: translateX(-50%);
+      }
+
+      .equipment-symbol {
+        border: 1.5px solid currentColor;
+        background-image:
+          linear-gradient(
+            90deg,
+            transparent 49%,
+            currentColor 50%,
+            transparent 51%
+          ),
+          linear-gradient(transparent 49%, currentColor 50%, transparent 51%);
+        transform: translateX(-50%) rotate(45deg) scale(0.73);
+      }
+
+      .equipment-symbol::after {
+        position: absolute;
+        inset: 22px;
+        content: "";
+        border: 1.5px solid currentColor;
+      }
+
+      .furniture-symbol {
+        width: 120px;
+        height: 90px;
+        border: 1.5px solid currentColor;
+        border-top-width: 20px;
+      }
+
+      .furniture-symbol::before,
+      .furniture-symbol::after {
+        position: absolute;
+        bottom: -28px;
+        width: 1.5px;
+        height: 28px;
+        content: "";
+        background: currentColor;
+      }
+
+      .furniture-symbol::before {
+        left: 12px;
+      }
+      .furniture-symbol::after {
+        right: 12px;
+      }
+
+      .institution-symbol {
+        width: 128px;
+        height: 100px;
+        border-right: 1.5px solid currentColor;
+        border-bottom: 1.5px solid currentColor;
+        border-left: 1.5px solid currentColor;
+        background-image: repeating-linear-gradient(
+          90deg,
+          transparent 0 19px,
+          currentColor 20px 21px
+        );
+      }
+
+      .institution-symbol::before {
+        position: absolute;
+        top: -22px;
+        left: -10px;
+        width: 146px;
+        height: 22px;
+        content: "";
+        background: currentColor;
+        clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      }
+
+      .custom-symbol {
+        border: 1.5px solid currentColor;
+        transform: translateX(-50%) rotate(30deg) skewY(-30deg) scaleY(0.86);
+      }
+
+      .custom-symbol::before,
+      .custom-symbol::after {
+        position: absolute;
+        content: "";
+        background: currentColor;
+      }
+
+      .custom-symbol::before {
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+      }
+      .custom-symbol::after {
+        top: 0;
+        left: 50%;
+        width: 1px;
+        height: 100%;
+      }
+
+      .about {
+        display: grid;
+        grid-template-columns: 42% 58%;
+        min-height: 800px;
+        overflow: hidden;
+        background: var(--graphite);
+        color: var(--paper);
+      }
+
+      .about-index {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-right: 1px solid rgba(255, 255, 255, 0.14);
+        color: rgba(244, 241, 233, 0.055);
+        font-size: clamp(10rem, 22vw, 24rem);
+        font-weight: 800;
+        letter-spacing: -0.12em;
+        line-height: 0.55;
+      }
+
+      .about-index::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        opacity: 0.5;
+        background-image:
+          linear-gradient(rgba(25, 91, 255, 0.28) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(25, 91, 255, 0.28) 1px, transparent 1px);
+        background-size: 70px 70px;
+        mask-image: linear-gradient(135deg, #000, transparent 78%);
+      }
+
+      .about-index span {
+        position: relative;
+        z-index: 2;
+        color: var(--blue);
+        font-size: 0.23em;
+        letter-spacing: 0;
+      }
+
+      .about-copy {
+        padding: 110px 6vw;
+      }
+
+      .eyebrow-light {
+        color: #7aa0ff !important;
+      }
+
+      .about h2 {
+        max-width: 810px;
+        margin: 25px 0 30px;
+        font-size: clamp(2.6rem, 4.1vw, 5rem);
+        font-weight: 740;
+        letter-spacing: -0.055em;
+        line-height: 0.99;
+      }
+
+      .about-lead {
+        max-width: 720px;
+        margin: 0;
+        color: #b6c0cc;
+        font-size: 1.08rem;
+        line-height: 1.7;
+      }
+
+      .about-points {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        margin-top: 62px;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .about-points div {
+        min-height: 150px;
+        padding: 24px 28px 24px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .about-points div:nth-child(odd) {
+        border-right: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .about-points div:nth-child(even) {
+        padding-left: 28px;
+      }
+
+      .about-points span,
+      .check-list span {
+        color: var(--blue);
+        font-size: 0.68rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+      }
+
+      .about-points p {
+        max-width: 300px;
+        margin: 18px 0 0;
+        font-size: 0.96rem;
+        line-height: 1.55;
+      }
+
+      .experience {
+        padding: 120px 5vw;
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: 0.7fr 2fr;
+        gap: 5vw;
+        align-items: start;
+      }
+
+      .section-heading h2 {
+        max-width: 900px;
+        margin: 0;
+        font-size: clamp(2.7rem, 4.4vw, 5.1rem);
+        font-weight: 750;
+        letter-spacing: -0.055em;
+        line-height: 0.98;
+      }
+
+      .experience-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 70px 0 36px calc(27% + 2.2vw);
+      }
+
+      .experience-list span {
+        padding: 15px 18px;
+        border: 1px solid var(--line);
+        color: #334158;
+        font-size: 0.93rem;
+      }
+
+      .experience-note {
+        max-width: 750px;
+        margin: 0 0 0 calc(27% + 2.2vw);
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.7;
+      }
+
+      .projects {
+        padding: 120px 5vw;
+        background: #e8ebed;
+      }
+
+      .projects-heading {
+        margin-bottom: 64px;
+      }
+
+      .projects-intro {
+        max-width: 760px;
+        margin: 28px 0 0 calc(27% + 2.2vw);
+        color: var(--muted);
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .project-card {
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        border: 1px solid #b9c1ca;
+        background: var(--paper);
+      }
+
+      .project-photo {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        border-bottom: 1px solid #b9c1ca;
+        background: #d8dde2;
+      }
+
+      .project-photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 350ms ease;
+      }
+
+      .project-card:hover .project-photo img {
+        transform: scale(1.025);
+      }
+
+      .demo-badge {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        padding: 8px 10px;
+        background: var(--blue);
+        color: white;
+        font-size: 0.65rem;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .project-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding: 28px;
+      }
+
+      .project-number {
+        color: var(--blue);
+        font-size: 0.68rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+      }
+
+      .project-card h3 {
+        margin: 18px 0 26px;
+        font-size: clamp(1.35rem, 1.65vw, 1.85rem);
+        letter-spacing: -0.035em;
+        line-height: 1.12;
+      }
+
+      .project-meta {
+        margin: auto 0 0;
+      }
+
+      .project-meta div {
+        display: grid;
+        grid-template-columns: 88px 1fr;
+        gap: 12px;
+        padding: 11px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .project-meta dt {
+        color: var(--muted);
+        font-size: 0.72rem;
+      }
+
+      .project-meta dd {
+        margin: 0;
+        font-size: 0.79rem;
+        font-weight: 620;
+        line-height: 1.45;
+      }
+
+      .audiences {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .audience-card {
+        min-height: 680px;
+        padding: 80px 5vw;
+      }
+
+      .audience-buyers {
+        background: #e8edf5;
+      }
+
+      .audience-suppliers {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .audience-card h2 {
+        max-width: 640px;
+        margin: 28px 0 48px;
+        font-size: clamp(2.5rem, 3.7vw, 4.5rem);
+        font-weight: 740;
+        letter-spacing: -0.05em;
+        line-height: 1;
+      }
+
+      .audience-card ul {
+        max-width: 660px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid rgba(8, 26, 51, 0.2);
+      }
+
+      .audience-suppliers ul {
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .audience-card li {
+        position: relative;
+        padding: 20px 0 20px 30px;
+        border-bottom: 1px solid rgba(8, 26, 51, 0.2);
+        line-height: 1.5;
+      }
+
+      .audience-suppliers li {
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .audience-card li::before {
+        position: absolute;
+        top: 27px;
+        left: 2px;
+        width: 8px;
+        height: 8px;
+        content: "";
+        background: var(--blue);
+      }
+
+      .audience-card > a {
+        display: flex;
+        justify-content: space-between;
+        max-width: 660px;
+        margin-top: 50px;
+        padding: 22px 0;
+        border-bottom: 2px solid currentColor;
+        font-weight: 700;
+      }
+
+      .process {
+        padding: 120px 5vw;
+      }
+
+      .process-heading {
+        margin-bottom: 72px;
+      }
+
+      .process-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--line);
+        border-left: 1px solid var(--line);
+      }
+
+      .process-grid article {
+        min-height: 310px;
+        padding: 28px;
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .process-grid span {
+        color: var(--blue);
+        font-size: 0.72rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+      }
+
+      .process-grid h3 {
+        margin: 100px 0 14px;
+        font-size: 1.45rem;
+        letter-spacing: -0.03em;
+      }
+
+      .process-grid p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      .control-section {
+        display: grid;
+        grid-template-columns: 43% 57%;
+        min-height: 760px;
+        background: #e8ebed;
+      }
+
+      .control-graphic {
+        position: relative;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        border-right: 1px solid var(--line);
+        background-image:
+          linear-gradient(rgba(25, 91, 255, 0.18) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(25, 91, 255, 0.18) 1px, transparent 1px);
+        background-size: 62px 62px;
+      }
+
+      .control-graphic > span {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+        width: 230px;
+        height: 300px;
+        border: 2px solid var(--ink);
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 6rem;
+        font-weight: 800;
+        letter-spacing: -0.08em;
+        box-shadow: 22px 22px 0 var(--blue);
+      }
+
+      .cross {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+      }
+
+      .cross::before,
+      .cross::after {
+        position: absolute;
+        content: "";
+        background: var(--blue);
+      }
+
+      .cross::before {
+        top: 12px;
+        left: 0;
+        width: 26px;
+        height: 1px;
+      }
+      .cross::after {
+        top: 0;
+        left: 12px;
+        width: 1px;
+        height: 26px;
+      }
+      .cross-one {
+        top: 18%;
+        left: 16%;
+      }
+      .cross-two {
+        right: 13%;
+        bottom: 20%;
+      }
+
+      .control-copy {
+        padding: 105px 7vw;
+      }
+
+      .control-copy h2 {
+        max-width: 790px;
+        margin: 25px 0 56px;
+        font-size: clamp(2.7rem, 4vw, 4.8rem);
+        font-weight: 750;
+        letter-spacing: -0.055em;
+        line-height: 1;
+      }
+
+      .check-list {
+        border-top: 1px solid #b9c1ca;
+      }
+
+      .check-list div {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        align-items: center;
+        min-height: 66px;
+        border-bottom: 1px solid #b9c1ca;
+      }
+
+      .check-list p {
+        margin: 0;
+        font-size: 0.96rem;
+      }
+
+      .faq {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 8vw;
+        padding: 120px 5vw;
+      }
+
+      .faq-heading {
+        display: block;
+      }
+
+      .faq-heading h2 {
+        margin-top: 24px;
+        font-size: clamp(2.7rem, 4vw, 4.7rem);
+      }
+
+      .faq-list {
+        border-top: 1px solid var(--line);
+      }
+
+      .faq-list details {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .faq-list summary {
+        position: relative;
+        padding: 27px 52px 27px 0;
+        cursor: pointer;
+        font-size: 1.08rem;
+        font-weight: 680;
+        line-height: 1.4;
+        list-style: none;
+      }
+
+      .faq-list summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .faq-list summary::after {
+        position: absolute;
+        top: 24px;
+        right: 0;
+        display: grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        content: "+";
+        border: 1px solid var(--ink);
+        color: var(--blue);
+        font-weight: 500;
+      }
+
+      .faq-list details[open] summary::after {
+        content: "−";
+      }
+
+      .faq-list details p {
+        max-width: 680px;
+        margin: -4px 0 28px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .contact {
+        display: grid;
+        grid-template-columns: 58% 42%;
+        min-height: 610px;
+        background: var(--blue);
+        color: white;
+      }
+
+      .contact-copy {
+        padding: 95px 7vw 95px 5vw;
+      }
+
+      .contact-copy .eyebrow-light {
+        color: #cbd8ff !important;
+      }
+
+      .contact-copy h2 {
+        max-width: 870px;
+        margin: 28px 0 36px;
+        font-size: clamp(3rem, 5vw, 6rem);
+        font-weight: 760;
+        letter-spacing: -0.06em;
+        line-height: 0.95;
+      }
+
+      .contact-copy > p:last-child {
+        max-width: 650px;
+        color: #dce5ff;
+        font-size: 1.04rem;
+        line-height: 1.65;
+      }
+
+      .contact-email {
+        display: flex;
+        justify-content: space-between;
+        max-width: 650px;
+        margin-top: 38px;
+        padding: 18px 0;
+        border-bottom: 2px solid white;
+        font-size: clamp(1.25rem, 2vw, 1.75rem);
+        font-weight: 720;
+      }
+
+      .contact-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 34px;
+        padding: 95px 5vw;
+        border-left: 1px solid rgba(255, 255, 255, 0.35);
+        background: #104be0;
+      }
+
+      .contact-panel-label {
+        margin: 0;
+        color: #cbd8ff;
+        font-size: 0.72rem;
+        font-weight: 750;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .contact-pending {
+        margin: 0;
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.38);
+      }
+
+      .contact-pending span {
+        color: #cbd8ff;
+        font-size: 0.7rem;
+        font-weight: 750;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .contact-pending p {
+        margin: 17px 0 0;
+        font-size: 1.18rem;
+        line-height: 1.55;
+      }
+
+      .company-details {
+        margin: 0;
+      }
+
+      .company-details div {
+        display: grid;
+        grid-template-columns: minmax(110px, 0.72fr) 1.4fr;
+        gap: 16px;
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .company-details dt {
+        color: #cbd8ff;
+        font-size: 0.72rem;
+        line-height: 1.45;
+      }
+
+      .company-details dd {
+        min-width: 0;
+        margin: 0;
+        overflow-wrap: anywhere;
+        font-size: 0.82rem;
+        font-weight: 620;
+        line-height: 1.45;
+      }
+
+      .company-details a {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+      }
+
+      .contact-links a {
+        display: flex;
+        justify-content: space-between;
+        padding: 18px 0;
+        border-bottom: 2px solid white;
+        font-weight: 700;
+      }
+
+      footer {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1fr;
+        align-items: end;
+        gap: 5vw;
+        padding: 70px 5vw;
+        background: var(--ink);
+        color: #c1cbd8;
+      }
+
+      .brand-footer {
+        color: white;
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.86rem;
+        line-height: 1.55;
+      }
+
+      footer p:last-child {
+        text-align: right;
+      }
+
+      @media (max-width: 1100px) {
+        .site-header {
+          grid-template-columns: 1fr auto;
+        }
+
+        .main-nav {
+          display: none;
+        }
+
+        .hero {
+          grid-template-columns: 64% 36%;
+        }
+
+        .hero h1 {
+          font-size: clamp(3.2rem, 6.5vw, 4.8rem);
+        }
+
+        .principles article {
+          padding-right: 2vw;
+          padding-left: 2vw;
+        }
+
+        .direction-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .direction-card:nth-child(2) {
+          border-right: 1px solid var(--line);
+        }
+
+        .about {
+          grid-template-columns: 34% 66%;
+        }
+
+        .process-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .audience-card {
+          padding-right: 4vw;
+          padding-left: 4vw;
+        }
+      }
+
+      @media (max-width: 760px) {
+        .site-header {
+          min-height: 72px;
+          padding: 0 22px;
+        }
+
+        .header-location {
+          display: none;
+        }
+
+        .brand {
+          font-size: 1.55rem;
+        }
+
+        .hero {
+          display: block;
+          min-height: auto;
+        }
+
+        .hero-copy {
+          min-height: 690px;
+          padding: 58px 22px 240px;
+        }
+
+        .region-tag {
+          display: flex;
+        }
+
+        .hero h1 {
+          font-size: clamp(3.05rem, 13vw, 4.4rem);
+        }
+
+        .hero h1 br:nth-of-type(1) {
+          display: none;
+        }
+
+        .hero-lead {
+          margin-top: 26px;
+          font-size: 1.02rem;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+          gap: 12px;
+          width: 100%;
+          margin-top: 34px;
+        }
+
+        .button {
+          width: 100%;
+          min-height: 58px;
+        }
+
+        .hero-visual {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 220px;
+          min-height: 0;
+          border-top: 1px solid var(--blue);
+          border-left: 0;
+          background-position: center 48%;
+        }
+
+        .principles {
+          display: block;
+          padding: 0 22px;
+        }
+
+        .principles article,
+        .principles article:first-child {
+          padding: 23px 0;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .principles article:last-child {
+          border-bottom: 0;
+        }
+
+        .directions-intro {
+          display: block;
+          padding: 80px 22px;
+        }
+
+        .directions-intro h2 {
+          margin-top: 22px;
+        }
+
+        .directions-intro > p:last-child {
+          margin-top: 24px;
+        }
+
+        .direction-grid {
+          display: block;
+          padding: 0 22px 80px;
+        }
+
+        .direction-card,
+        .direction-card:nth-child(2),
+        .direction-card:last-child {
+          min-height: 370px;
+          border-right: 1px solid var(--line);
+          border-bottom: 0;
+        }
+
+        .direction-card:last-child {
+          border-bottom: 1px solid var(--graphite);
+        }
+
+        .direction-symbol {
+          top: 80px;
+        }
+
+        .about {
+          display: block;
+          min-height: 0;
+        }
+
+        .about-index {
+          min-height: 320px;
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+          font-size: 11rem;
+        }
+
+        .about-copy {
+          padding: 76px 22px;
+        }
+
+        .about-points {
+          display: block;
+          margin-top: 44px;
+        }
+
+        .about-points div,
+        .about-points div:nth-child(even) {
+          min-height: 0;
+          padding: 22px 0;
+          border-right: 0;
+        }
+
+        .experience,
+        .projects,
+        .process {
+          padding: 80px 22px;
+        }
+
+        .section-heading {
+          display: block;
+        }
+
+        .section-heading h2 {
+          margin-top: 22px;
+        }
+
+        .experience-list,
+        .experience-note {
+          margin-left: 0;
+        }
+
+        .experience-list {
+          margin-top: 44px;
+        }
+
+        .projects-heading {
+          margin-bottom: 44px;
+        }
+
+        .projects-intro {
+          margin: 24px 0 0;
+        }
+
+        .projects-grid {
+          display: block;
+        }
+
+        .project-card,
+        .project-card:last-child {
+          max-width: none;
+          margin-top: 16px;
+        }
+
+        .project-card:first-child {
+          margin-top: 0;
+        }
+
+        .audiences {
+          display: block;
+        }
+
+        .audience-card {
+          min-height: 0;
+          padding: 76px 22px;
+        }
+
+        .process-heading {
+          margin-bottom: 44px;
+        }
+
+        .process-grid {
+          display: block;
+        }
+
+        .process-grid article {
+          min-height: 235px;
+        }
+
+        .process-grid h3 {
+          margin-top: 70px;
+        }
+
+        .control-section {
+          display: block;
+          min-height: 0;
+        }
+
+        .control-graphic {
+          min-height: 430px;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .control-graphic > span {
+          width: 170px;
+          height: 220px;
+          font-size: 4.5rem;
+        }
+
+        .control-copy {
+          padding: 76px 22px;
+        }
+
+        .faq {
+          display: block;
+          padding: 80px 22px;
+        }
+
+        .faq-list {
+          margin-top: 46px;
+        }
+
+        .contact {
+          display: block;
+          min-height: 0;
+        }
+
+        .contact-copy,
+        .contact-panel {
+          padding: 76px 22px;
+        }
+
+        .contact-panel {
+          min-height: 430px;
+          border-top: 1px solid rgba(255, 255, 255, 0.35);
+          border-left: 0;
+        }
+
+        .company-details div {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        footer {
+          display: block;
+          padding: 58px 22px;
+        }
+
+        footer p {
+          margin-top: 25px;
+        }
+
+        footer p:last-child {
+          text-align: left;
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .hero-copy > * {
+          animation: reveal 620ms both;
+        }
+
+        .hero-copy > *:nth-child(2) {
+          animation-delay: 80ms;
+        }
+
+        .hero-copy > *:nth-child(3) {
+          animation-delay: 150ms;
+        }
+
+        .hero-copy > *:nth-child(4) {
+          animation-delay: 220ms;
+        }
+
+        .coordinate-grid {
+          animation: grid-in 900ms 180ms both;
+        }
+      }
+
+      @keyframes reveal {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+      }
+
+      @keyframes grid-in {
+        from {
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
-  <body><main><header class="site-header"><a class="brand" href="#top" aria-label="КУЗРЕСУРС — на главную">КУЗРЕСУРС<span class="brand-mark"></span></a><nav class="main-nav" aria-label="Основная навигация"><a href="#about">О компании</a><a href="#directions">Направления</a><a href="#process">Как работаем</a><a href="#contacts">Контакты</a></nav><div class="header-location" aria-label="Регион работы"><span class="pin" aria-hidden="true"></span>Москва и Московская область</div></header><section class="hero" id="top"><div class="hero-copy"><div class="region-tag"><span class="pin" aria-hidden="true"></span>Москва и Московская область</div><h1>Поставляем точно<br/>по техническому<br/>заданию<span class="title-dot" aria-hidden="true"></span></h1><p class="hero-lead">КузРесурс — комплексные поставки товаров для государственных и корпоративных заказчиков по 44‑ФЗ и 223‑ФЗ</p><div class="hero-actions"><a class="button button-primary" href="#contacts">Обсудить поставку<span aria-hidden="true">↗</span></a><a class="button button-secondary" href="#partners">Стать поставщиком</a></div></div><div class="hero-visual" aria-hidden="true"><div class="coordinate-grid"></div><div class="measure measure-one"></div><div class="measure measure-two"></div><div class="visual-caption">KUZ / RESOURCE / SUPPLY</div></div></section><section class="principles" aria-label="Основные принципы работы"><article><span class="line-icon blueprint" aria-hidden="true"><i></i></span><div><span>01</span><h2>Подбор по ТЗ</h2></div></article><article><span class="line-icon document" aria-hidden="true"><i></i><b></b></span><div><span>02</span><h2>Контроль документов</h2></div></article><article><span class="line-icon package" aria-hidden="true"><i></i></span><div><span>03</span><h2>Поставка в срок</h2></div></article></section><section class="directions-intro" id="directions"><p class="eyebrow">Направления поставок</p><h2>Не ограничиваемся одной категорией товаров</h2><p>Подбираем решение под конкретную закупку, проверяем характеристики и документы до подачи предложения.</p></section><section class="direction-grid" aria-label="Категории поставок"><article class="direction-card direction-card-featured"><span class="card-number">01</span><div class="direction-symbol equipment-symbol" aria-hidden="true"></div><h3>Оборудование и техника</h3><p>Бытовая и профессиональная техника, электроника, климатическое и кухонное оборудование.</p></article><article class="direction-card"><span class="card-number">02</span><div class="direction-symbol furniture-symbol" aria-hidden="true"></div><h3>Мебель и оснащение</h3><p>Мебель для учреждений, специализированные изделия и комплексное оснащение помещений.</p></article><article class="direction-card"><span class="card-number">03</span><div class="direction-symbol institution-symbol" aria-hidden="true"></div><h3>Товары для учреждений</h3><p>Хозяйственные, интерьерные и другие товары для государственных и корпоративных заказчиков.</p></article><article class="direction-card direction-card-dark"><span class="card-number">04</span><div class="direction-symbol custom-symbol" aria-hidden="true"></div><h3>Сложные позиции по ТЗ</h3><p>Находим редкие модели, проверяем аналоги и собираем поставку из нескольких товарных групп.</p></article></section><section class="about" id="about"><div class="about-index" aria-hidden="true">44<span>/</span>223</div><div class="about-copy"><p class="eyebrow eyebrow-light">Подход КУЗРЕСУРС</p><h2>Сначала проверяем соответствие. Потом считаем поставку.</h2><p class="about-lead">В закупках недостаточно найти похожий товар. Модель должна проходить по каждому параметру технического задания, а документы — выдержать проверку при приёмке.</p><div class="about-points"><div><span>01</span><p>Разбираем обязательные и критические параметры ТЗ</p></div><div><span>02</span><p>Сверяем характеристики по первичным источникам</p></div><div><span>03</span><p>Проверяем происхождение, сертификаты и комплектность</p></div><div><span>04</span><p>Заранее планируем документы, логистику и приёмку</p></div></div></div></section><section class="experience" aria-labelledby="experience-title"><div class="section-heading"><p class="eyebrow">Практический опыт</p><h2 id="experience-title">Категории, с которыми уже работали</h2></div><div class="experience-list"><span>Бытовая техника</span><span>Телевизоры и электроника</span><span>Пурифайеры и водное оборудование</span><span>Оснащение учреждений</span><span>Интерьерные товары</span></div><p class="experience-note">Этот опыт помогает быстро видеть спорные параметры, риски аналогов и слабые места в документах ещё до участия в закупке.</p></section><section class="audiences" id="partners"><article class="audience-card audience-buyers"><p class="eyebrow">Для заказчиков</p><h2>Поставка без расхождений между заявкой и приёмкой</h2><ul><li>Точное соответствие заявленным характеристикам</li><li>Понятный комплект сопроводительных документов</li><li>Согласованная логистика до грузополучателя</li></ul><a href="#contacts">Обсудить задачу <span aria-hidden="true">↗</span></a></article><article class="audience-card audience-suppliers"><p class="eyebrow eyebrow-light">Для производителей и поставщиков</p><h2>Выводим ваш товар в государственные и корпоративные закупки</h2><ul><li>Передаём конкретное ТЗ и объём будущей поставки</li><li>Заранее согласовываем цену, сроки и документы</li><li>Строим отношения не вокруг одной случайной сделки</li></ul><a href="#contacts">Предложить сотрудничество <span aria-hidden="true">↗</span></a></article></section><section class="process" id="process"><div class="section-heading process-heading"><p class="eyebrow">Как работаем</p><h2>Один процесс — от документации до закрывающих документов</h2></div><div class="process-grid"><article><span>01</span><h3>Получаем задачу</h3><p>Изучаем ТЗ, условия контракта, сроки и место поставки.</p></article><article><span>02</span><h3>Подбираем решение</h3><p>Находим модели и проверяем соответствие каждому параметру.</p></article><article><span>03</span><h3>Фиксируем условия</h3><p>Согласовываем цену, документы, комплектность и логистику.</p></article><article><span>04</span><h3>Исполняем поставку</h3><p>Контролируем движение товара, приёмку и закрытие контракта.</p></article></div></section><section class="control-section"><div class="control-graphic" aria-hidden="true"><span>ТЗ</span><i class="cross cross-one"></i><i class="cross cross-two"></i></div><div class="control-copy"><p class="eyebrow">Контроль соответствия</p><h2>Проверяем товар не «в целом», а по каждому требованию</h2><div class="check-list"><div><span>01</span><p>Технические и функциональные характеристики</p></div><div><span>02</span><p>Размеры, комплектация и условия эксплуатации</p></div><div><span>03</span><p>Страна происхождения и ограничения допуска</p></div><div><span>04</span><p>Сертификаты, декларации и паспорта изделий</p></div><div><span>05</span><p>Гарантия, сроки и требования к доставке</p></div></div></div></section><section class="faq" aria-labelledby="faq-title"><div class="section-heading faq-heading"><p class="eyebrow">Коротко о главном</p><h2 id="faq-title">Вопросы о сотрудничестве</h2></div><div class="faq-list"><details><summary>Вы работаете только с государственными закупками?</summary><p>Нет. Берём задачи государственных и корпоративных заказчиков, когда требуется точный подбор товара, документов и логистики.</p></details><details><summary>Можно прислать техническое задание для оценки?</summary><p>Да. Для первичного разбора достаточно ТЗ, количества, адреса и желаемого срока поставки.</p></details><details><summary>Как производителю предложить свою продукцию?</summary><p>Направьте каталог, оптовые условия, информацию о происхождении и комплект документов. Мы сопоставим продукцию с текущими задачами.</p></details></div></section><section class="contact" id="contacts"><div class="contact-copy"><p class="eyebrow eyebrow-light">Начнём с документации</p><h2>Пришлите ТЗ или предложение о сотрудничестве</h2><p>Для закупки укажите количество, регион и срок. Для сотрудничества — приложите каталог, оптовый прайс и документы на продукцию.</p></div><div class="contact-panel"><p class="contact-panel-label">Контакты компании</p><div class="contact-pending"><span>Юридические данные</span><p>ИП Кузнецов Дмитрий Алексеевич<br />Корпоративная почта и российский номер будут добавлены после подключения.</p></div><div class="contact-links"><a href="#top">Вернуться наверх <span aria-hidden="true">↑</span></a></div></div></section><footer><a class="brand brand-footer" href="#top">КУЗРЕСУРС<span class="brand-mark"></span></a><p>ИП Кузнецов Дмитрий Алексеевич<br />Комплексные поставки для государственных и корпоративных заказчиков</p><p>Москва и Московская область</p></footer></main></body>
+  <body>
+    <main>
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="КУЗРЕСУРС — на главную"
+          >КУЗРЕСУРС<span class="brand-mark"></span
+        ></a>
+        <nav class="main-nav" aria-label="Основная навигация">
+          <a href="#about">О компании</a><a href="#directions">Направления</a
+          ><a href="portfolio.html">Портфолио</a
+          ><a href="#process">Как работаем</a><a href="#contacts">Контакты</a>
+        </nav>
+        <div class="header-location" aria-label="Регион работы">
+          <span class="pin" aria-hidden="true"></span>Москва и Московская
+          область
+        </div>
+      </header>
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <div class="region-tag">
+            <span class="pin" aria-hidden="true"></span>Москва и Московская
+            область
+          </div>
+          <h1>
+            Комплексное снабжение государственных и корпоративных Заказчиков
+          </h1>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contacts"
+              >Обсудить поставку<span aria-hidden="true">↗</span></a
+            ><a class="button button-secondary" href="#partners"
+              >Стать поставщиком</a
+            >
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="coordinate-grid"></div>
+          <div class="measure measure-one"></div>
+          <div class="measure measure-two"></div>
+          <div class="visual-caption">KUZ / RESOURCE / SUPPLY</div>
+        </div>
+      </section>
+      <section class="principles" aria-label="Основные принципы работы">
+        <article>
+          <span class="line-icon blueprint" aria-hidden="true"><i></i></span>
+          <div>
+            <span>01</span>
+            <h2>Подбор по ТЗ</h2>
+          </div>
+        </article>
+        <article>
+          <span class="line-icon document" aria-hidden="true"
+            ><i></i><b></b
+          ></span>
+          <div>
+            <span>02</span>
+            <h2>Контроль документов</h2>
+          </div>
+        </article>
+        <article>
+          <span class="line-icon package" aria-hidden="true"><i></i></span>
+          <div>
+            <span>03</span>
+            <h2>Поставка в срок</h2>
+          </div>
+        </article>
+      </section>
+      <section class="directions-intro" id="directions">
+        <p class="eyebrow">Направления поставок</p>
+        <h2>Не ограничиваемся одной категорией товаров</h2>
+      </section>
+      <section class="direction-grid" aria-label="Категории поставок">
+        <article class="direction-card direction-card-featured">
+          <span class="card-number">01</span>
+          <div
+            class="direction-symbol equipment-symbol"
+            aria-hidden="true"
+          ></div>
+          <h3>Оборудование и техника</h3>
+          <p>
+            Бытовая и профессиональная техника, электроника, климатическое и
+            кухонное оборудование.
+          </p>
+        </article>
+        <article class="direction-card">
+          <span class="card-number">02</span>
+          <div
+            class="direction-symbol furniture-symbol"
+            aria-hidden="true"
+          ></div>
+          <h3>Мебель и оснащение</h3>
+          <p>
+            Мебель для учреждений, специализированные изделия и комплексное
+            оснащение помещений.
+          </p>
+        </article>
+        <article class="direction-card">
+          <span class="card-number">03</span>
+          <div
+            class="direction-symbol institution-symbol"
+            aria-hidden="true"
+          ></div>
+          <h3>Товары для учреждений</h3>
+          <p>
+            Хозяйственные, интерьерные и другие товары для государственных и
+            корпоративных заказчиков.
+          </p>
+        </article>
+        <article class="direction-card direction-card-dark">
+          <span class="card-number">04</span>
+          <div class="direction-symbol custom-symbol" aria-hidden="true"></div>
+          <h3>Сложные позиции по ТЗ</h3>
+          <p>
+            Находим редкие модели, проверяем аналоги и собираем поставку из
+            нескольких товарных групп.
+          </p>
+        </article>
+      </section>
+      <section class="about" id="about">
+        <div class="about-index" aria-hidden="true">44<span>/</span>223</div>
+        <div class="about-copy">
+          <p class="eyebrow eyebrow-light">Подход КУЗРЕСУРС</p>
+          <h2>
+            Репутация строится на обязательствах, выполненных точно и в срок
+          </h2>
+          <p class="about-lead">
+            Надёжность для нас — это выполнение условий контракта в полном
+            объёме, соблюдение согласованных сроков и ответственность за
+            результат после завершения поставки.
+          </p>
+          <div class="about-points">
+            <div>
+              <span>01</span>
+              <p>Выполняем поставки в согласованные сроки</p>
+            </div>
+            <div>
+              <span>02</span>
+              <p>Соблюдаем условия контракта и заявленные характеристики</p>
+            </div>
+            <div>
+              <span>03</span>
+              <p>Сопровождаем поставку до полной приёмки</p>
+            </div>
+            <div>
+              <span>04</span>
+              <p>
+                Исполняем гарантийные обязательства в течение установленного
+                срока
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <p class="eyebrow">Практический опыт</p>
+          <h2 id="experience-title">Категории, с которыми уже работали</h2>
+        </div>
+        <div class="experience-list">
+          <span>Бытовая техника</span><span>Телевизоры и электроника</span
+          ><span>Пурифайеры и водное оборудование</span
+          ><span>Профессиональное кухонное оборудование</span
+          ><span>Мебель и металлические изделия</span
+          ><span>Лабораторная мебель</span><span>Светотехника</span
+          ><span>Интерьерные товары и декор</span
+          ><span>Хозяйственные товары</span
+          ><span>Двери, окна и комплектующие</span
+          ><span>Средства индивидуальной защиты</span
+          ><span>Специализированное оборудование по ТЗ</span>
+        </div>
+        <p class="experience-note">
+          Этот опыт помогает быстро видеть спорные параметры, риски аналогов и
+          слабые места в документах ещё до участия в закупке.
+        </p>
+      </section>
+      <section
+        class="projects"
+        id="projects"
+        aria-labelledby="projects-title"
+        hidden
+      >
+        <div class="section-heading projects-heading">
+          <p class="eyebrow">Реализованные поставки</p>
+          <div>
+            <h2 id="projects-title">Примеры выполненных контрактов</h2>
+            <p class="projects-intro">
+              Демонстрационный раздел: информация, объекты, сроки и изображения
+              временные и будут заменены на данные реальных поставок.
+            </p>
+          </div>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-kitchen-demo.webp"
+                alt="Демонстрационное изображение оснащённого пищеблока"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 01</span>
+              <h3>Оснащение пищеблока образовательного комплекса</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Муниципальная школа, Московская область</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Нейтральное и тепловое кухонное оборудование</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>21 календарный день</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Поставка принята в полном объёме</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-displays-demo.webp"
+                alt="Демонстрационное изображение поставленных телевизоров"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 02</span>
+              <h3>Телевизоры и презентационное оборудование</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Административно-учебный центр, Москва</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Телевизоры, мобильные стойки и комплектующие</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>14 календарных дней</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Оборудование доставлено и подготовлено к работе</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-office-demo.webp"
+                alt="Демонстрационное изображение поставленной офисной мебели"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 03</span>
+              <h3>Комплексное оснащение административных помещений</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Государственное учреждение, Московская область</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Рабочие столы, кресла, шкафы и металлические стеллажи</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>30 календарных дней</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Мебель собрана и передана заказчику без замечаний</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-water-demo.webp"
+                alt="Демонстрационное изображение поставленных пурифайеров"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 04</span>
+              <h3>Пурифайеры и оборудование для питьевой воды</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Городская поликлиника, Москва</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Напольные пурифайеры, фильтры и комплекты подключения</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>12 календарных дней</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Оборудование установлено и проверено</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-lighting-demo.webp"
+                alt="Демонстрационное изображение поставленной светотехники"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 05</span>
+              <h3>Светотехника для общественных помещений</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Муниципальный культурный центр, Московская область</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Потолочные светильники, торшеры и запасные комплекты</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>18 календарных дней</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Поставка выполнена по утверждённой спецификации</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-lab-demo.webp"
+                alt="Демонстрационное изображение лабораторной мебели"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 06</span>
+              <h3>Лабораторная мебель для учебного кабинета</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Образовательное учреждение, Московская область</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Лабораторные столы, мойки, шкафы и стеллажи</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>35 календарных дней</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Мебель собрана и передана в эксплуатацию</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-laundry-demo.webp"
+                alt="Демонстрационное изображение поставленной бытовой техники"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 07</span>
+              <h3>Бытовая техника для социального учреждения</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Центр социального обслуживания, Москва</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Стиральные машины, сушильная техника и аксессуары</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>16 календарных дней</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Техника подключена и принята без замечаний</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-ppe-demo.webp"
+                alt="Демонстрационное изображение поставленных средств защиты"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 08</span>
+              <h3>Средства индивидуальной защиты для персонала</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Муниципальная эксплуатационная служба, Москва</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Каски, перчатки, очки, спецодежда и защитная обувь</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>10 календарных дней</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Комплекты распределены по размерам и подразделениям</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-doors-demo.webp"
+                alt="Демонстрационное изображение установленных дверей и окон"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 09</span>
+              <h3>Двери, окна и комплектующие для учреждения</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Административное здание, Московская область</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Дверные блоки, оконные конструкции и фурнитура</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>28 календарных дней</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Изделия поставлены и установлены по размерам объекта</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-photo">
+              <img
+                src="project-household-demo.webp"
+                alt="Демонстрационное изображение поставленных хозяйственных товаров"
+                loading="lazy"
+              />
+              <span class="demo-badge">Демо</span>
+            </div>
+            <div class="project-body">
+              <span class="project-number">Поставка 10</span>
+              <h3>Хозяйственные товары и уборочный инвентарь</h3>
+              <dl class="project-meta">
+                <div>
+                  <dt>Объект</dt>
+                  <dd>Сеть муниципальных учреждений, Москва</dd>
+                </div>
+                <div>
+                  <dt>Состав</dt>
+                  <dd>Инвентарь, расходные материалы и хозяйственные товары</dd>
+                </div>
+                <div>
+                  <dt>Срок</dt>
+                  <dd>9 календарных дней</dd>
+                </div>
+                <div>
+                  <dt>Результат</dt>
+                  <dd>Партия распределена по адресам грузополучателей</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="audiences" id="partners">
+        <article class="audience-card audience-buyers">
+          <p class="eyebrow">Для заказчиков</p>
+          <h2>Поставка без расхождений между заявкой и приёмкой</h2>
+          <ul>
+            <li>Точное соответствие заявленным характеристикам</li>
+            <li>Понятный комплект сопроводительных документов</li>
+            <li>Согласованная логистика до грузополучателя</li>
+          </ul>
+          <a href="#contacts"
+            >Обсудить задачу <span aria-hidden="true">↗</span></a
+          >
+        </article>
+        <article class="audience-card audience-suppliers">
+          <p class="eyebrow eyebrow-light">Для производителей и поставщиков</p>
+          <h2>Выводим ваш товар в государственные и корпоративные закупки</h2>
+          <ul>
+            <li>Передаём конкретное ТЗ и объём будущей поставки</li>
+            <li>Заранее согласовываем цену, сроки и документы</li>
+            <li>Строим отношения не вокруг одной случайной сделки</li>
+          </ul>
+          <a href="#contacts"
+            >Предложить сотрудничество <span aria-hidden="true">↗</span></a
+          >
+        </article>
+      </section>
+      <section class="process" id="process">
+        <div class="section-heading process-heading">
+          <p class="eyebrow">Как работаем</p>
+          <h2>Один процесс — от документации до закрывающих документов</h2>
+        </div>
+        <div class="process-grid">
+          <article>
+            <span>01</span>
+            <h3>Получаем задачу</h3>
+            <p>Изучаем ТЗ, условия контракта, сроки и место поставки.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Подбираем решение</h3>
+            <p>Находим модели и проверяем соответствие каждому параметру.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Фиксируем условия</h3>
+            <p>Согласовываем цену, документы, комплектность и логистику.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Исполняем поставку</h3>
+            <p>Контролируем движение товара, приёмку и закрытие контракта.</p>
+          </article>
+        </div>
+      </section>
+      <section class="control-section">
+        <div class="control-graphic" aria-hidden="true">
+          <span>ТЗ</span><i class="cross cross-one"></i
+          ><i class="cross cross-two"></i>
+        </div>
+        <div class="control-copy">
+          <p class="eyebrow">Контроль соответствия</p>
+          <h2>Проверяем товар по каждому требованию</h2>
+          <div class="check-list">
+            <div>
+              <span>01</span>
+              <p>Технические и функциональные характеристики</p>
+            </div>
+            <div>
+              <span>02</span>
+              <p>Размеры, комплектация и условия эксплуатации</p>
+            </div>
+            <div>
+              <span>03</span>
+              <p>Страна происхождения и ограничения допуска</p>
+            </div>
+            <div>
+              <span>04</span>
+              <p>Сертификаты, декларации и паспорта изделий</p>
+            </div>
+            <div>
+              <span>05</span>
+              <p>Гарантия, сроки и требования к доставке</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faq" aria-labelledby="faq-title">
+        <div class="section-heading faq-heading">
+          <p class="eyebrow">Коротко о главном</p>
+          <h2 id="faq-title">Вопросы о сотрудничестве</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Вы работаете только с государственными закупками?</summary>
+            <p>
+              Нет. Берём задачи государственных и корпоративных заказчиков,
+              когда требуется точный подбор товара, документов и логистики.
+            </p>
+          </details>
+          <details>
+            <summary>Можно прислать техническое задание для оценки?</summary>
+            <p>
+              Да. Для первичного разбора достаточно ТЗ, количества, адреса и
+              желаемого срока поставки.
+            </p>
+          </details>
+          <details>
+            <summary>Как производителю предложить свою продукцию?</summary>
+            <p>
+              Направьте каталог, оптовые условия, информацию о происхождении и
+              комплект документов. Мы сопоставим продукцию с текущими задачами.
+            </p>
+          </details>
+        </div>
+      </section>
+      <section class="contact" id="contacts">
+        <div class="contact-copy">
+          <p class="eyebrow eyebrow-light">Начнём с документации</p>
+          <h2>Пришлите ТЗ или предложение о сотрудничестве</h2>
+          <p>
+            Для закупки укажите количество, регион и срок. Для сотрудничества —
+            приложите каталог, оптовый прайс и документы на продукцию.
+          </p>
+          <a class="contact-email" href="mailto:info@kuzresurs.ru"
+            >info@kuzresurs.ru <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="contact-panel">
+          <p class="contact-panel-label">Контакты и реквизиты</p>
+          <div class="contact-pending">
+            <dl class="company-details">
+              <div>
+                <dt>Название ИП</dt>
+                <dd>ИП Кузнецов Дмитрий Алексеевич</dd>
+              </div>
+              <div>
+                <dt>ИНН</dt>
+                <dd>505019984946</dd>
+              </div>
+              <div>
+                <dt>ОГРНИП</dt>
+                <dd>323508100140453</dd>
+              </div>
+              <div>
+                <dt>Электронная почта</dt>
+                <dd>
+                  <a href="mailto:info@kuzresurs.ru">info@kuzresurs.ru</a>
+                </dd>
+              </div>
+              <div>
+                <dt>Телефон</dt>
+                <dd><a href="tel:+74994033448">+7 (499) 403-34-48</a></dd>
+              </div>
+            </dl>
+          </div>
+          <div class="contact-links">
+            <a href="#top"
+              >Вернуться наверх <span aria-hidden="true">↑</span></a
+            >
+          </div>
+        </div>
+      </section>
+      <footer>
+        <a class="brand brand-footer" href="#top"
+          >КУЗРЕСУРС<span class="brand-mark"></span
+        ></a>
+        <p>
+          ИП Кузнецов Дмитрий Алексеевич<br />Комплексные поставки для
+          государственных и корпоративных заказчиков
+        </p>
+        <p>Москва и Московская область</p>
+      </footer>
+    </main>
+  </body>
 </html>
