@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Светлая эмблема КузРесурс</title>
+  <desc id="desc">Геометрический знак в форме буквы К, стрелки поставки и коробки</desc>
+  <path fill="#f4f1e9" d="M18 18h28v66H18z"/>
+  <path fill="#f4f1e9" d="M50 64 84 18h48L96 64z"/>
+  <path fill="#195bff" d="M50 68h56V47l40 40-40 40v-21H50z"/>
+  <path fill="#f4f1e9" d="m18 108 46 32v14l-46-32z"/>
+  <path fill="#195bff" d="m68 140 38-28v16l-38 26z"/>
+</svg>

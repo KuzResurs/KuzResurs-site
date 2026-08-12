@@ -9,10 +9,7 @@
       content="КузРесурс — комплексные поставки товаров для государственных и корпоративных заказчиков в Москве и Московской области."
     />
     <title>КУЗРЕСУРС — комплексные поставки по 44‑ФЗ и 223‑ФЗ</title>
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20fill%3D%22%23081a33%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M14%2014h9v14l15-14h12L31%2031l20%2019H38L23%2035v15h-9z%22%20fill%3D%22%23f4f1e9%22%2F%3E%0A%20%20%3Crect%20x%3D%2251%22%20y%3D%228%22%20width%3D%227%22%20height%3D%227%22%20fill%3D%22%23195bff%22%2F%3E%0A%3C%2Fsvg%3E%0A"
-    />
+    <link rel="icon" href="kuzresurs-emblem.svg" type="image/svg+xml" />
     <style>
       :root {
         --paper: #f4f1e9;
@@ -67,18 +64,19 @@
 
       .brand {
         display: inline-flex;
-        align-items: flex-start;
+        align-items: center;
         width: fit-content;
+        gap: 12px;
         font-size: clamp(1.55rem, 2.2vw, 2.25rem);
         font-weight: 800;
         letter-spacing: -0.04em;
       }
 
-      .brand-mark {
-        width: 7px;
-        height: 7px;
-        margin: 4px 0 0 7px;
-        background: var(--blue);
+      .brand-emblem {
+        display: block;
+        width: 46px;
+        height: 46px;
+        flex: 0 0 auto;
       }
 
       .main-nav {
@@ -1316,6 +1314,11 @@
         color: white;
       }
 
+      .brand-footer .brand-emblem {
+        width: 52px;
+        height: 52px;
+      }
+
       footer p {
         margin: 0;
         font-size: 0.86rem;
@@ -1385,7 +1388,13 @@
         }
 
         .brand {
+          gap: 9px;
           font-size: 1.55rem;
+        }
+
+        .brand-emblem {
+          width: 38px;
+          height: 38px;
         }
 
         .hero {
@@ -1691,9 +1700,16 @@
   <body>
     <main>
       <header class="site-header">
-        <a class="brand" href="#top" aria-label="КУЗРЕСУРС — на главную"
-          >КУЗРЕСУРС<span class="brand-mark"></span
-        ></a>
+        <a class="brand" href="#top" aria-label="КУЗРЕСУРС — на главную">
+          <img
+            class="brand-emblem"
+            src="kuzresurs-emblem.svg"
+            alt=""
+            width="46"
+            height="46"
+          />
+          <span>КУЗРЕСУРС</span>
+        </a>
         <nav class="main-nav" aria-label="Основная навигация">
           <a href="#about">О компании</a><a href="#directions">Направления</a
           ><a href="#process">Как работаем</a><a href="#contacts">Контакты</a>
@@ -2362,9 +2378,16 @@
         </div>
       </section>
       <footer>
-        <a class="brand brand-footer" href="#top"
-          >КУЗРЕСУРС<span class="brand-mark"></span
-        ></a>
+        <a class="brand brand-footer" href="#top">
+          <img
+            class="brand-emblem"
+            src="kuzresurs-emblem-light.svg"
+            alt=""
+            width="52"
+            height="52"
+          />
+          <span>КУЗРЕСУРС</span>
+        </a>
         <p>
           ИП Кузнецов Дмитрий Алексеевич<br />Комплексные поставки для
           государственных и корпоративных заказчиков
